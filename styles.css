@@ -13,19 +13,26 @@
   margin: 30px auto;
   padding: 1rem;
 
+  /* Set display property to grid for grid layout */
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  /* Create three rows, each taking 1 fraction of available space */
+  grid-template-rows: 1fr min-content 2fr;
+  /* Create columns with a minimum size of 200px and maximum 1 fraction of available space,
+   automatically fitting as many columns as possible within the container */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Set a 10px gap between grid items */
   grid-gap: 10px;
+  /* Automatically generate rows with a height of 150px as needed */
   grid-auto-rows: 150px;
 
+  /* Define a grid template with named areas for layout */
   grid-template-areas:
-    'item1 item1 item2'
-    'item1 item1 item2'
-    'item3 item3 item6'
-    'item4 item5 item6'
-    'item4 item5 item6';
+    'item1 item1 item2' /* Rows 1-2 */
+    'item3 item3 item6' /* Row 3 */
+    'item4 item5 item6'; /* Rows 4-5 */
 }
+
+/* general style for all items */
 
 .item {
   padding: 0px;
@@ -36,6 +43,8 @@
   border-radius: 20px;
 }
 
+/* placed items on grid */
+/* add each item style and color */
 .item1 {
   grid-area: item1;
   background-color: var(--color-b4);
